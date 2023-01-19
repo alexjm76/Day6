@@ -11,7 +11,11 @@ class Pokemon:
         print(f"{self.owner}의 포켓몬은 {self.name}입니다")
         for skill in self.skills:
             print(skill)
+class Pikachu(Pokemon):
+    pass
 
+pil = Pikachu("피카츄", "덴트", "번개")
+pil.info()
 p1 = Pokemon("피카츄", "한지우" , "50만 볼트/100만볼트/번개")
 p2 = Pokemon("꼬부기", "오바람", "고속스핀/커품/몸통박치기/하이드로펌프")
 
