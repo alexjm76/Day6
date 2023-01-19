@@ -1,17 +1,9 @@
-#9.1
-def good():
-    return ["Harry", "Ron", "hermione"]
+groups = {"빅뱅" : ["GD", " 태양", "탑","대성", "승리"],
+          "마마무": ["문별", "솔라","휘인","화사"]}
 
-#9.2
-cnts = 0
+for i, j in groups.items():
+    print(f"{i}의 멤버")
+    for member in j:
+        if member != "승리":
+            print(member)
 
-def get_odds():
-    for i in range(10):
-        if i % 2 == 1:
-            yield i
-
-odds = get_odds()
-for j in odds:
-    cnts += 1
-    if cnts ==3:
-        print(j)
