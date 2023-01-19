@@ -1,15 +1,24 @@
-def test(func):
-	def new_func(*args, **kwargs):
-		print("start")
-		result = func(*args, **kwargs)
-		print("Result:", result)
-		print("end")
-		return result
-	return new_func
+# while True:
+#     try:
+#         x= int(input("아무거나 입력해: "))
+#         break
+#     except OopsException
 
 
-@test
-def add(a, b):
-	return a + b
 
-add(2, 4)
+
+
+
+class OopsError(Exception):
+    pass
+
+def Oops():
+    a=input('아무거나 입력 ')
+    if len(a)<10:
+        raise OopsError("Caught and oops")
+
+
+try:
+    Oops()
+except OopsError as i:
+    print('오류발생!', i)
