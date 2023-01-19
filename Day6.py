@@ -1,30 +1,31 @@
-def factorial_iter(n):
-    """
-    반복문을 사용한 팩토리얼 함수
-    :param n: n!
-    :return: integer ㅠㅐㄱ토리얼 계산 결과 값
-    """
-    result = 1
-    for k in range(1, n+1):
-        result = result*k
-    return  result
+try:
+    #raise Exception("쉬는 시간")
+    raise TypeError("타입 에러")
+    expr = input("분자 분모 입력 : ").split()
+    print(int(expr[0])/int(expr[1]))
 
-def factorial_recu(n):
-    """
-    재귀 함수를 사용한 팩토리얼 함수
-    :param n: n!
-    :return:  자기 자신을 호출 또는 1
-    """
-    if n == 1: #끝나는 조건
-        return 1
-    else:
-        return factorial_recu(n-1) * n
-    
-    
-def somethin(n):
-    a=5+n #전역 변수는 바꾸면 바뀌는데 로컬 함수는 바꿔도 안바뀜
-    print(a)
-    
-    
-print(factorial_recu(5))
-print(factorial_iter(5))
+
+except ValueError as err:
+     print(f"숫자를 입력해주세요({err})")
+except ZeroDivisionError as err:
+    print(f"분모에 0이 올수 없습니다.({err})")
+except IndexError:
+    print("범위에 문제")
+except:
+    print("예외 발생!")
+else: #예외가 발생하지 않았을 때
+    print("프로그램 정상", end =' ') #줄바꿈 x
+finally: #예외 발생여부와 상관 없이 무조건 실행
+    print("종료")
+
+
+# def div_calc(first, second):
+#     """
+#     나누기 함수
+#     :param fist:  분자
+#     :param second:  분모
+#     :return: 계산 결과
+#     """
+#     return first / second
+# print(div_calc(15,3))
+# print(div_calc(15,0))
